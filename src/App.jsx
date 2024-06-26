@@ -1,14 +1,15 @@
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import MainPage from './Pages/MainPage'
 
-
-function App() {
-
+export default function App() {
   return (
-    <main>
-      <div className="Card-Container">
-        <h1>Hello world</h1>
-      </div>
-    </main>
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<MainPage/>}/>
+        <Route path='/Main' element={<MainPage/>}/>
+      </Routes>
+    </BrowserRouter>
+  </>
   )
 }
-
-export default App
