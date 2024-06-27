@@ -32,8 +32,15 @@ export default function Main(){
             {currentStep === 4 && <Step4 />}
             {currentStep === 5 && <Step5 />}
           <div>
-            <button className='Back-Button' onClick={prevStep}>Go Back</button>
-            <button className='Next-Button' onClick={nextStep}>Next Step</button>
+            <button
+            className='Back-Button' onClick={prevStep}
+            style={currentStep===1 || currentStep===5  ? {display: 'none'} : {display: 'inline-block'}}
+            >
+              Go Back</button>
+            <button
+             className='Next-Button' onClick={nextStep}
+             style={currentStep===5  ? {display: 'none'} : {display: 'inline-block'}}
+             >Next Step</button>
           </div>
         </div>
       </div>
