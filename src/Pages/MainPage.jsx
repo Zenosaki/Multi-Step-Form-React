@@ -34,12 +34,16 @@ export default function Main(){
           <div className='Card-Buttons'>
             <button
             className='Back-Button' onClick={prevStep}
-            style={currentStep===1 || currentStep===5  ? {display: 'none'} : {display: 'inline-block'}}
+            style={currentStep===1 || currentStep===5  ? 
+            {
+              color:'transparent',
+              cursor: 'default',
+            } : {display: 'inline-block'}}
             >
               Go Back</button>
             <button
              className='Next-Button' onClick={nextStep}
-             style={currentStep===5  ? {display: 'none'} : {display: 'inline-block'}}
+             style={currentStep===5  ? {display: 'none'} : {display: 'Block'} }
              >Next Step</button>
           </div>
         </div>

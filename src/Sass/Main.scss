@@ -10,6 +10,7 @@
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
   font-weight: normal;
+  user-select: none;
 }
 main{
   width: 100%;
@@ -31,12 +32,41 @@ main{
       width: 74.5%;
     }
     .Step-Content{
-      background-color: red;
       width: 85%;
       padding-top: 40px;
+      position: relative;
       .Card-Buttons{
         display: flex;
         justify-content: space-between;
+        position: absolute;
+        bottom: 2.8%;
+        right: 0;
+        left: 0;
+        .Next-Button{
+          background-color:$Marineblue;
+          padding: 16px 25px;
+          border: none;
+          border-radius: 8px;
+          font-size: medium;
+          color: $White;
+          cursor: pointer;
+          transition: all 0.5s ease;
+          &:hover{
+            background-color:hsl(213, 79%, 34%);
+            transition: all 0.5s ease;
+          }
+        }
+        .Back-Button{
+          font-size: medium;
+          color: $Coolgray;
+          border: none;
+          transition: color 0.5s ease;
+          cursor: pointer;
+          &:hover{
+            color:$Marineblue ;
+            transition: color 0.5s ease;
+          }
+        }
       }
     }
   }
