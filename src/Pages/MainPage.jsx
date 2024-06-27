@@ -31,7 +31,7 @@ export default function Main(){
             {currentStep === 3 && <Step3 />}
             {currentStep === 4 && <Step4 />}
             {currentStep === 5 && <Step5 />}
-          <div>
+          <div className='Card-Buttons'>
             <button
             className='Back-Button' onClick={prevStep}
             style={currentStep===1 || currentStep===5  ? {display: 'none'} : {display: 'inline-block'}}

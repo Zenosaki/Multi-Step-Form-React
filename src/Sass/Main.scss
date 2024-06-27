@@ -1,0 +1,43 @@
+@import './utils/Fonts';
+@import './utils/Colors';
+@import './utils/Mixins';
+//Weights: 400, 500, 700
+//x:237 y:72
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: normal;
+}
+main{
+  width: 100%;
+  height: 100vh;
+  @include Center-Div();
+  background-color:$Magnolia;
+  .Card-Box{
+    border-radius: 8px;
+    background-color:$Alabaster;
+    display: grid;
+    grid-template-columns: 41% 1fr;
+    padding: 15px 18px;
+    width: 940px;
+    min-height: 600px;
+    box-shadow: 4px 3px   20px $Lightgray;
+    .Step-Navigator{
+      background-color: red;
+      border-radius: 10px;
+      width: 74.5%;
+    }
+    .Step-Content{
+      background-color: red;
+      width: 85%;
+      padding-top: 40px;
+      .Card-Buttons{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
