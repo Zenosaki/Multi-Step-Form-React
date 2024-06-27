@@ -1,0 +1,25 @@
+
+
+.Step-Container{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  .Step{
+    width: 34.5px;
+    height: 34.5px;
+    border: 1px solid $Magnolia;
+    color:$Magnolia;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+  }
+  .StepIndicator{
+    color:$Coolgray;
+  }
+  .StepTital{
+    font-weight: bold;
+    color:$Magnolia;
+  }
+}

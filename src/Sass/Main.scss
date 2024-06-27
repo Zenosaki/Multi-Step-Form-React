@@ -5,6 +5,7 @@
 //x:237 y:72
 
 @import './components/StepContentTitle';
+@import './components/StepNav';
 
 *{
   padding: 0;
@@ -30,10 +31,15 @@ main{
     box-shadow: 4px 3px   20px $Lightgray;
     .Step-Navigator{
       border-radius: 10px;
-      width: 74.5%;
+      width: 74%;
       background-image: url(../assets/images/bg-sidebar-desktop.svg);
       background-position: center;
       background-size: cover;
+      padding-top: 40px;
+      padding-left: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
     .Step-Content{
       width: 85%;

@@ -4,7 +4,7 @@ export default function StepElement(props){
   return(
     <div className="Step-Container">
       <div>
-        <h3 className="Step">{props.Step}</h3>
+        <h4 className="Step">{props.Step}</h4>
       </div>
       <div>
         <h5 className="StepIndicator">Step {props.Step}</h5>
