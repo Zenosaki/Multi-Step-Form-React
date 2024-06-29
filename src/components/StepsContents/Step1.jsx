@@ -9,7 +9,8 @@ export default function Step1(){
         description='Please provide your name, email address, and phone number.'
       />
       <div className="content">
-    </div>
+        
+      </div>
   </div>
   )
 }
