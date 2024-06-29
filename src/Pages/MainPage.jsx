@@ -5,6 +5,7 @@ import Step2 from '../components/StepsContents/Step2'
 import Step3 from '../components/StepsContents/Step3'
 import Step4 from '../components/StepsContents/Step4'
 import Step5 from '../components/StepsContents/Step5'
+import Buttons from '../components/StepContentButtons'
 
 export default function Main(){
   const [currentStep, setCurrentStep] = useState(1);
@@ -31,21 +32,11 @@ export default function Main(){
             {currentStep === 3 && <Step3 />}
             {currentStep === 4 && <Step4 />}
             {currentStep === 5 && <Step5 />}
-          <div className='Card-Buttons'>
-            <button
-            className='Back-Button' onClick={prevStep}
-            style={currentStep===1 || currentStep===5  ? 
-            {
-              color:'transparent',
-              cursor: 'default',
-            } : {display: 'inline-block'}}
-            >
-              Go Back</button>
-            <button
-             className='Next-Button' onClick={nextStep}
-             style={currentStep===5  ? {display: 'none'} : {display: 'Block'} }
-             >Next Step</button>
-          </div>
+            <Buttons 
+              prevStep={prevStep} 
+              currentStep={currentStep}
+              nextStep={nextStep}
+            />
         </div>
       </div>
     </main>
