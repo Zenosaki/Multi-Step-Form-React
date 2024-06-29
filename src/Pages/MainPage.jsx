@@ -20,10 +20,10 @@ export default function Main(){
     <main>
       <div className="Card-Box">
         <div className="Step-Navigator">
-          <StepShower Step='1' StepTitle='YOUR INFO'/>
-          <StepShower Step='2' StepTitle='SELECT PLAN'/>
-          <StepShower Step='3' StepTitle='ADD-ONS'/>
-          <StepShower Step='4' StepTitle='SUMMARY'/>
+          <StepShower currentS={currentStep} Step='1' StepTitle='YOUR INFO'/>
+          <StepShower currentS={currentStep} Step='2' StepTitle='SELECT PLAN'/>
+          <StepShower currentS={currentStep} Step='3' StepTitle='ADD-ONS'/>
+          <StepShower currentS={currentStep} Step='4' StepTitle='SUMMARY'/>
         </div>
         <div className="Step-Content">
             {currentStep === 1 && <Step1 />}

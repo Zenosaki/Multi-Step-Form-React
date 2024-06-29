@@ -14,11 +14,17 @@
     justify-content: center;
     border-radius: 50%;
     aspect-ratio: 1/1;
+    font-weight: bold;
+  }
+  .Step-Active{
+    color: $Marineblue;
+    background-color:$Lightblue;
+    border-color: transparent;
   }
   .StepIndicator{
     color:$Coolgray;
   }
-  .StepTital{
+  .StepTitle{
     font-weight: bold;
     color:$Magnolia;
   }
