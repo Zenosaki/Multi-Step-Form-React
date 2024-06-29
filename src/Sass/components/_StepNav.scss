@@ -17,6 +17,7 @@
     font-weight: bold;
   }
   .Step-Active{
+    transition: all 0.2s ease-in;
     color: $Marineblue;
     background-color:$Lightblue;
     border-color: transparent;
