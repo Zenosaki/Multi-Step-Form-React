@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 
-
-
 export default function Buttons(props){
   return(
     <div className='Card-Buttons'>
@@ -15,9 +13,10 @@ export default function Buttons(props){
     >
       Go Back</button>
     <button
-     className='Next-Button' onClick={props.nextStep}
+     className={`${props.currentStep==4 ?'Finish-Button':'Next-Button'}`} onClick={props.nextStep}
      style={props.currentStep===5  ? {display: 'none'} : {display: 'Block'} }
-     >Next Step</button>
+     >{props.currentStep==4 ? 'Confirm' : 'Next Step'}
+     </button>
   </div>
   )
 }

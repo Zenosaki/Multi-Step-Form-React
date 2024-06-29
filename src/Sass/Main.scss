@@ -67,6 +67,14 @@ main{
             transition: all 0.5s ease;
           }
         }
+        .Finish-Button{
+          @extend .Next-Button;
+          background-color:$Purplishblue;
+          &:hover{
+            background-color:hsl(243, 89%, 75%);
+            transition: all 0.5s ease;
+          }
+        }
         .Back-Button{
           font-size: medium;
           color: $Coolgray;
