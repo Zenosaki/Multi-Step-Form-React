@@ -1,0 +1,33 @@
+
+
+.Input-Label{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  font-size: medium;
+  label{
+    color:$Marineblue;
+  }
+  .Error-message{
+    color:$Strawberryred;
+    font-weight: 700;
+  }
+}
+input{
+  color:$Marineblue;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid $Coolgray;
+  outline: none;
+  padding: 13px;
+  font-size: large;
+  &:focus{
+    border-color:$Purplishblue;
+  }
+  &::placeholder{
+    color: $Coolgray;
+    font-size: large;
+  }
+}

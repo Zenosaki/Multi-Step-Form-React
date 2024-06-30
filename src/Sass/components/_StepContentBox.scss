@@ -1,8 +1,10 @@
 
 .Step-Content-Container{
-  background-color: aqua;
   max-height: 80%;
   .content{
-    
+    padding-top:40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 }
