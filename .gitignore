@@ -1,4 +1,4 @@
-# Avoid accidental upload of the Sketch and Figma design files
+# Avoid accidental upload of design files
 #####################################################
 ## Please do not remove lines 5 and 6 - thanks! 🙂 ##
 #####################################################
@@ -11,10 +11,51 @@
 ###############################################
 *.xd
 
-# Avoid your project being littered with annoying .DS_Store files!
+# Ignore macOS specific files
 .DS_Store
-.prettierignore
 
+# Ignore editor-specific directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 
-# Avoid node files
-node_modules
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore environment variable files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore build directories
+build/
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore coverage reports
+coverage/
+
+# Ignore package manager lock files if you are not using them
+# Uncomment the lines below if you are using Yarn instead of npm
+# yarn.lock
+# Uncomment the line below if you are using npm instead of Yarn
+# package-lock.json
+
+# Ignore PnP files for Yarn
+.pnp
+.pnp.js
+
+# Ignore any other directories or files you don't want to include
+# Uncomment and add any additional patterns as needed
+# .cache/
+# .next/
+# *.sass-cache
