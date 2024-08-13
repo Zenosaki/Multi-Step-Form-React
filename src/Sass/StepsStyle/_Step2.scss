@@ -4,6 +4,7 @@
     gap: 18px;
     align-items: center;
     .Card{
+      transition: all 0.5s ease;
       cursor: pointer;
       width: 137px;
       border-radius: 8px;
@@ -11,6 +12,10 @@
       padding: 20px 15px;
       position: relative;
       min-height: 160px;
+      &:hover{
+        transition: border-color 0.5s ease;
+        border-color:$Purplishblue;
+      }
       .desc{
         margin-top: 35%;
         h4{
@@ -27,6 +32,9 @@
         }
       }
     }
+    .CardActive{
+      border-color:$Purplishblue !important;
+    }
   }
   .Switcher{
     width: 100%;
@@ -36,6 +44,7 @@
     justify-content: center;
     gap: 25px;
     .SwitchActive{
+      transition: color 0.5s ease;
       color:$Marineblue;
     }
     h5{
@@ -51,11 +60,16 @@
       height: 20px;
       padding: 3px;
       .Dot{
+        transition: all 0.5s ease;
         width: 12px;
         height: 12px;
         background-color:$Magnolia;
         border: 1px solid transparent;
         border-radius: 50%;
+      }
+      .DotActive {
+        transition: all 0.5s ease;
+        transform:translateX(150%);
       }
     }
   }

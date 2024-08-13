@@ -1,0 +1,21 @@
+export const Data=[{
+    arcade:{
+      price:{
+        Monthly:"$9/mo",
+        Yearly:"$90/yr",
+      }
+    },
+    advanced:{
+      price:{
+        Monthly:"$12/mo",
+        Yearly:"$120/yr",
+      },
+    },
+    pro:{
+      price:{
+        Monthly:"$15/mo",
+        Yearly:"$150/yr",
+      },
+    },
+  },
+]
