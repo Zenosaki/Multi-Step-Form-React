@@ -7,7 +7,7 @@ export default function Input(props){
         <label>{props.label}</label>
         <h4 className='Error-message'>This feild is required</h4>
       </div>
-      <input required placeholder={props.placeholder} name='User-name' type={props.type} />
+      <input required placeholder={props.placeholder} className='Input' type={props.type} />
     </div>
   )
 }

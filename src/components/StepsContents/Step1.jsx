@@ -10,8 +10,8 @@ export default function Step1(){
       />
       <div className="content">
         <Input placeholder='e.g. Stephen King' type='text' label='Name'/>
-        <Input placeholder='e.g. stephenking@lorem.com' type='email' label='email'/>
-        <Input placeholder='e.g. +1 234 567 890' type='tel' label='phone number'/>
+        <Input placeholder='e.g. stephenking@lorem.com' type='email' label='Email Address'/>
+        <Input placeholder='e.g. +1 234 567 890' type='tel' label='Phone Number'/>
       </div>
   </div>
   )

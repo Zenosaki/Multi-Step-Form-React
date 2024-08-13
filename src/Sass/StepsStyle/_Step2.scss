@@ -1,0 +1,62 @@
+.content{
+  .Cards-Container{
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    .Card{
+      cursor: pointer;
+      width: 137px;
+      border-radius: 8px;
+      border: 1px solid $Coolgray;
+      padding: 20px 15px;
+      position: relative;
+      min-height: 160px;
+      .desc{
+        margin-top: 35%;
+        h4{
+          margin-bottom: 6px;
+          color:$Marineblue;
+          font-weight: 700;
+        }
+        h5{
+          color:$Coolgray;
+        }
+        .Bonus{
+          color: $Marineblue;
+          margin-top: 9px;
+        }
+      }
+    }
+  }
+  .Switcher{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    .SwitchActive{
+      color:$Marineblue;
+    }
+    h5{
+      color: $Coolgray;
+      font-weight: 700;
+    }
+    .SwitchButton{
+      cursor: pointer;
+      width: 38px;
+      border: 1px solid transparent;
+      background-color:$Marineblue ;
+      border-radius: 1000px;
+      height: 20px;
+      padding: 3px;
+      .Dot{
+        width: 12px;
+        height: 12px;
+        background-color:$Magnolia;
+        border: 1px solid transparent;
+        border-radius: 50%;
+      }
+    }
+  }
+}
