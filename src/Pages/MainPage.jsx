@@ -17,6 +17,30 @@ export default function Main(){
   const prevStep = () => {
     setCurrentStep(prevStep => (prevStep > 1 ? prevStep - 1 : prevStep));
   };
+
+  const verify = () => {
+    if (currentStep === 1) {
+      let counter=0;
+      document.querySelectorAll('.input-field').forEach((element) => {
+        if (element.value.trim() === '') {
+          element.classList.add('ErrorActive');
+          element.parentElement.querySelector('.Error-message').style.display = 'block';
+        } else {
+          element.classList.remove('ErrorActive');
+          element.parentElement.querySelector('.Error-message').style.display = 'none';
+          counter ++
+        }
+      });
+      if(counter ===3){
+        nextStep();
+      }
+    } else {
+      nextStep();
+    }
+  };
+  
+  
+
   return(
     <main>
       <div className="Card-Box">
@@ -35,7 +59,7 @@ export default function Main(){
             <Buttons 
               prevStep={prevStep} 
               currentStep={currentStep}
-              nextStep={nextStep}
+              nextStep={verify}
             />
         </div>
       </div>

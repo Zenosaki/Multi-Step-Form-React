@@ -1,19 +1,25 @@
 
-
-.Input-Label{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 8px;
-  font-size: medium;
-  label{
-    color:$Marineblue;
-  }
-  .Error-message{
-    color:$Strawberryred;
+.input-wrapper {
+  .Error-message {
+    display: none; // Initially hide the error message
+    color: $Strawberryred;
     font-weight: 700;
   }
+  
+  .ErrorActive {
+    border-color: $Strawberryred;
+  }
 }
+.Input-Label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    font-size: medium;
+    label{
+      color:$Marineblue;
+    }
+  }
 input{
   color:$Marineblue;
   font-weight: 500;

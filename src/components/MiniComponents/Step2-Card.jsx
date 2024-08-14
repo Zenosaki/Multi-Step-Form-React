@@ -26,7 +26,7 @@ export default function card(props){
 card.propTypes = {
   icon: PropTypes.string,
   title: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   type:PropTypes.string,
   symbole:PropTypes.string,
 };
