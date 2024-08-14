@@ -16,7 +16,7 @@ export default function card(props){
       <img src={props.icon} alt="icone"/>
       <div className="desc">
         <h4 >{props.title}</h4>
-        <h5>{props.price}</h5>
+        <h5>${props.price}/{props.symbole}</h5>
         {props.type == 'Yearly' && <h5 className='Bonus'>{props.bonus}</h5> }
       </div>
     </div>
@@ -28,4 +28,5 @@ card.propTypes = {
   title: PropTypes.string,
   price: PropTypes.string,
   type:PropTypes.string,
+  symbole:PropTypes.string,
 };

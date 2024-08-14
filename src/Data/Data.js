@@ -1,20 +1,38 @@
-export const Data=[{
-    arcade:{
+export const S2Data=[{
+    Arcade:{
       price:{
-        Monthly:"$9/mo",
-        Yearly:"$90/yr",
+        Monthly:{
+          symbole:'mon',
+          int:9,
+        },
+        Yearly:{
+          symbole:'yr',
+          int:90,
+        },
       }
     },
-    advanced:{
+    Advanced:{
       price:{
-        Monthly:"$12/mo",
-        Yearly:"$120/yr",
+        Monthly:{
+          symbole:'mon',
+          int:12,
+        },
+        Yearly:{
+          symbole:'yr',
+          int:120,
+        }
       },
     },
-    pro:{
+    Pro:{
       price:{
-        Monthly:"$15/mo",
-        Yearly:"$150/yr",
+        Monthly:{
+          symbole:'mon',
+          int:15,
+        },
+        Yearly:{
+          symbole:'yr',
+          int:150,
+        },
       },
     },
   },

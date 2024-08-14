@@ -4,7 +4,7 @@ import pro from '../../assets/images/icon-pro.svg'
 import advanced from '../../assets/images/icon-advanced.svg'
 import arcade from '../../assets/images/icon-arcade.svg'
 import { useState } from 'react';
-import {Data} from '../../Data/Data'
+import {S2Data} from '../../Data/Data'
 
 export default function Step2(){
 const [Type,setType] = useState('Monthly')
@@ -21,7 +21,8 @@ const triggertype = () => {
           <Card
             icon={arcade}
             title='Arcade'
-            price={Data[0].arcade.price[Type]}
+            price={S2Data[0].Arcade.price[Type].int}
+            symbole={S2Data[0].Advanced.price[Type].symbole}
             type={Type}
             bonus="2 months free"
             default="CardActive"
@@ -29,7 +30,8 @@ const triggertype = () => {
           <Card
             icon={advanced}
             title='Advanced'
-            price={Data[0].advanced.price[Type]}
+            price={S2Data[0].Advanced.price[Type].int}
+            symbole={S2Data[0].Advanced.price[Type].symbole}
             type={Type}
             bonus="2 months free"
             default=""
@@ -37,7 +39,8 @@ const triggertype = () => {
           <Card
             icon={pro}
             title='Pro'
-            price={Data[0].pro.price[Type]}
+            price={S2Data[0].Pro.price[Type].int}
+            symbole={S2Data[0].Advanced.price[Type].symbole}
             type={Type}
             bonus="2 months free"
             default=""
