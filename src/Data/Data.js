@@ -78,3 +78,17 @@ export const S3Data=[{
     },
   }
 }];
+
+export const SavedData=[{
+  Plan:{
+    name:'',
+    type:'',
+    Price:{
+      int:0,
+      symbole:'',
+    }
+  }
+},
+{
+  AddOns:[]
+}];
