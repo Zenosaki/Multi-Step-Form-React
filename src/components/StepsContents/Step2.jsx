@@ -1,35 +1,47 @@
-import Title from '../StepContentTitle'
-import Card from '../MiniComponents/Step2-Card'
-import pro from '../../assets/images/icon-pro.svg'
-import advanced from '../../assets/images/icon-advanced.svg'
-import arcade from '../../assets/images/icon-arcade.svg'
-import { useState } from 'react';
-import {S2Data} from '../../Data/Data'
-import {setDtype } from '../../Data/Data';
+import { useState, useEffect } from 'react';
+import Title from '../StepContentTitle';
+import Card from '../MiniComponents/Step2-Card';
+import pro from '../../assets/images/icon-pro.svg';
+import advanced from '../../assets/images/icon-advanced.svg';
+import arcade from '../../assets/images/icon-arcade.svg';
+import { S2Data } from '../../Data/Data';
+import { setDtype } from '../../Data/Data';
 
-export default function Step2(){
-const [Type,setType] = useState('Monthly')
+export default function Step2() {
+  const savedType = localStorage.getItem('selectedPlanType') || 'Monthly';
 
-const triggertype = () => {
-  setType((prevType) => {
-    const newType = prevType === 'Monthly' ? 'Yearly' : 'Monthly';
-    setDtype(newType);
-    return newType;
-  });
-};
-  return(
+  const [Type, setType] = useState(savedType);
+  
+  const [activeCard, setActiveCard] = useState(localStorage.getItem('activeCard') || '');
+
+  useEffect(() => {
+    localStorage.setItem('selectedPlanType', Type);
+    setDtype(Type);
+  }, [Type]);
+
+  const triggertype = () => {
+    setType(prevType => (prevType === 'Monthly' ? 'Yearly' : 'Monthly'));
+  };
+
+  const handleCardClick = (cardTitle) => {
+    setActiveCard(cardTitle);
+    localStorage.setItem('activeCard', cardTitle);
+  };
+
+  return (
     <div className="Step-Content-Container">
-      <Title title='Select your plan' description='You have the option of monthly or yearly billing. '/>
+      <Title title='Select your plan' description='You have the option of monthly or yearly billing.' />
       <div className="content">
         <div className="Cards-Container">
           <Card
             icon={arcade}
             title='Arcade'
             price={S2Data[0].Arcade.price[Type].int}
-            symbole={S2Data[0].Advanced.price[Type].symbole}
+            symbole={S2Data[0].Arcade.price[Type].symbole}
             type={Type}
             bonus="2 months free"
-            default="CardActive"
+            default={activeCard === 'Arcade' ? 'CardActive' : ''}
+            onClick={() => handleCardClick('Arcade')}
           />
           <Card
             icon={advanced}
@@ -38,16 +50,18 @@ const triggertype = () => {
             symbole={S2Data[0].Advanced.price[Type].symbole}
             type={Type}
             bonus="2 months free"
-            default=""
+            default={activeCard === 'Advanced' ? 'CardActive' : ''}
+            onClick={() => handleCardClick('Advanced')}
           />
           <Card
             icon={pro}
             title='Pro'
             price={S2Data[0].Pro.price[Type].int}
-            symbole={S2Data[0].Advanced.price[Type].symbole}
+            symbole={S2Data[0].Pro.price[Type].symbole}
             type={Type}
             bonus="2 months free"
-            default=""
+            default={activeCard === 'Pro' ? 'CardActive' : ''}
+            onClick={() => handleCardClick('Pro')}
           />
         </div>
         <div className="Switcher">
@@ -58,6 +72,6 @@ const triggertype = () => {
           <h5 className={`Yearly ${Type === 'Yearly' ? 'SwitchActive' : ''}`}>Yearly</h5>
         </div>
       </div>
-  </div>
-  )
+    </div>
+  );
 }

@@ -1,32 +1,25 @@
-import PropTypes from 'prop-types' 
+import PropTypes from 'prop-types';
 
-export default function card(props){
-  const MakeActive=(event)=>{
-    const card = event.currentTarget; 
-    card.classList.add('CardActive');
-    const allCards = document.querySelectorAll('.Card');
-    allCards.forEach(c => {
-      if (c !== card) {
-        c.classList.remove('CardActive');
-      }
-    });
-  } 
-  return(
-    <div className={`Card ${props.default}`} onClick={MakeActive}>
-      <img src={props.icon} alt="icone"/>
+export default function Card({ icon, title, price, type, symbole, bonus, default: defaultClass, onClick }) {
+  return (
+    <div className={`Card ${defaultClass}`} onClick={onClick}>
+      <img src={icon} alt="icon" />
       <div className="desc">
-        <h4 >{props.title}</h4>
-        <h5>${props.price}/{props.symbole}</h5>
-        {props.type == 'Yearly' && <h5 className='Bonus'>{props.bonus}</h5> }
+        <h4>{title}</h4>
+        <h5>${price}/{symbole}</h5>
+        {type === 'Yearly' && <h5 className='Bonus'>{bonus}</h5>}
       </div>
     </div>
-  )
+  );
 }
 
-card.propTypes = {
-  icon: PropTypes.string,
-  title: PropTypes.string,
-  price: PropTypes.number,
-  type:PropTypes.string,
-  symbole:PropTypes.string,
+Card.propTypes = {
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
+  symbole: PropTypes.string.isRequired,
+  bonus: PropTypes.string,
+  default: PropTypes.string,
+  onClick: PropTypes.func.isRequired
 };
