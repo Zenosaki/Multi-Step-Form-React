@@ -4,7 +4,7 @@ export default function StepElement(props) {
   return (
     <div className="Step-Container">
       <div>
-        <h4 className={`Step ${props.Step == props.currentS || props.currentS>4 && props.Step==4  ? 'Step-Active' : ''}`}>{props.Step}</h4>
+        <h4 className={`Step ${props.Step == props.currentS || props.currentS>4 && props.Step===4  ? 'Step-Active' : ''}`}>{props.Step}</h4>
       </div>
       <div>
         <h5 className="StepIndicator">Step {props.Step}</h5>
@@ -15,7 +15,7 @@ export default function StepElement(props) {
 }
 
 StepElement.propTypes = {
-  Step: PropTypes.string.isRequired,
+  Step: PropTypes.number,
   StepTitle: PropTypes.string.isRequired,
   currentS: PropTypes.oneOfType([
     PropTypes.string,

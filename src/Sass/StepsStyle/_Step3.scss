@@ -1,0 +1,37 @@
+.checkBox{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid $Coolgray;
+  padding: 20px;
+  border-radius: 8px;
+  .LeftSide{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: center;
+    column-gap: 15px;
+    .checkIcon{
+      width: 20px;
+      height: 20px;
+      border: 1px solid $Coolgray;
+      border-radius: 5px;
+    }
+    .service{
+      h4{
+        color:$Marineblue;
+        font-weight: 500;
+      }
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      .ServiceP{
+        color:$Coolgray;
+        font-weight: normal;
+      }
+    }
+  }
+  .Price{
+    color:$Purplishblue;
+  }
+}

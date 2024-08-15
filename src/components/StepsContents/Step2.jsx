@@ -5,14 +5,18 @@ import advanced from '../../assets/images/icon-advanced.svg'
 import arcade from '../../assets/images/icon-arcade.svg'
 import { useState } from 'react';
 import {S2Data} from '../../Data/Data'
+import {setDtype } from '../../Data/Data';
 
 export default function Step2(){
 const [Type,setType] = useState('Monthly')
 
 const triggertype = () => {
-  setType(prevType => prevType === 'Monthly' ? 'Yearly' : 'Monthly');
+  setType((prevType) => {
+    const newType = prevType === 'Monthly' ? 'Yearly' : 'Monthly';
+    setDtype(newType);
+    return newType;
+  });
 };
-
   return(
     <div className="Step-Content-Container">
       <Title title='Select your plan' description='You have the option of monthly or yearly billing. '/>

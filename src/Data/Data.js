@@ -2,7 +2,7 @@ export const S2Data=[{
     Arcade:{
       price:{
         Monthly:{
-          symbole:'mon',
+          symbole:'mo',
           int:9,
         },
         Yearly:{
@@ -14,7 +14,7 @@ export const S2Data=[{
     Advanced:{
       price:{
         Monthly:{
-          symbole:'mon',
+          symbole:'mo',
           int:12,
         },
         Yearly:{
@@ -26,7 +26,7 @@ export const S2Data=[{
     Pro:{
       price:{
         Monthly:{
-          symbole:'mon',
+          symbole:'mo',
           int:15,
         },
         Yearly:{
@@ -37,3 +37,44 @@ export const S2Data=[{
     },
   },
 ]
+
+let Dtype = 'Monthly';
+
+export const setDtype = (newType) => {
+  Dtype = newType;
+};
+
+export { Dtype };
+
+export const S3Data=[{
+  service:{
+    Monthly:{
+      symbole:'mo',
+      int:1,
+    },
+    Yearly:{
+      symbole:'yr',
+      int:10,
+    },
+  },
+  storage:{
+    Monthly:{
+      symbole:'mo',
+      int:2,
+    },
+    Yearly:{
+      symbole:'yr',
+      int:20,
+    },
+  },
+  profile:{
+    Monthly:{
+      symbole:'mo',
+      int:2,
+    },
+    Yearly:{
+      symbole:'yr',
+      int:20,
+    },
+  }
+}];
