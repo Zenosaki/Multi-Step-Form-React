@@ -65,7 +65,7 @@ export default function Main() {
           ))}
         </div>
         <div className="Step-Content">
-          <CurrentStepComponent />
+          <CurrentStepComponent currentStep={currentStep} setCurrentStep={setCurrentStep}/>
           <Buttons prevStep={prevStep} currentStep={currentStep} nextStep={verify} />
         </div>
       </div>
