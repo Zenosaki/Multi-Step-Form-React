@@ -11,13 +11,11 @@
   }
 }
 .Input-Label{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 8px;
-    font-size: medium;
-    label{
-      color:$Marineblue;
+  @include Center-Div();
+  padding-bottom: 8px;
+  font-size: medium;
+  label{
+    color:$Marineblue;
     }
   }
 input{

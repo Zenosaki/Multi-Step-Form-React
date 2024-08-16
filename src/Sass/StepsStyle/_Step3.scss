@@ -1,8 +1,6 @@
 .checkBox{
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include SapceBetween();
   border: 1px solid $Coolgray;
   padding: 20px;
   border-radius: 8px;
