@@ -11,12 +11,12 @@
   }
 }
 .Input-Label{
-  @include Center-Div();
-  padding-bottom: 8px;
-  font-size: medium;
+  @include SapceBetween();
+    padding-bottom: 8px;
+    font-size: medium;
   label{
     color:$Marineblue;
-    }
+  }
   }
 input{
   color:$Marineblue;
