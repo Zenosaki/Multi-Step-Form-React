@@ -1,0 +1,17 @@
+.Step5-container{
+  width: 100%;
+  height: 95%;
+  @include Center-Div();
+  flex-direction: column;
+  h1{
+    color:$Marineblue;
+    font-weight: 700;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  p{
+    color:$Coolgray;
+    text-align: center;
+    line-height: 25px;
+  }
+}
