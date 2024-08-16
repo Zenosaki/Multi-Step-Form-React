@@ -39,7 +39,6 @@ export const S2Data=[{
 ]
 
 let Dtype = 'Monthly';
-
 export const setDtype = (newType) => {
   Dtype = newType;
 };
@@ -47,7 +46,7 @@ export const setDtype = (newType) => {
 export { Dtype };
 
 export const S3Data=[{
-  service:{
+  Onlineservice:{
     Monthly:{
       symbole:'mo',
       int:1,
@@ -57,7 +56,7 @@ export const S3Data=[{
       int:10,
     },
   },
-  storage:{
+  Largerstorage:{
     Monthly:{
       symbole:'mo',
       int:2,
@@ -67,7 +66,7 @@ export const S3Data=[{
       int:20,
     },
   },
-  profile:{
+  Customizableprofile:{
     Monthly:{
       symbole:'mo',
       int:2,
@@ -82,14 +81,19 @@ export const S3Data=[{
 
 export const SavedData=[{
   Plan:{
-    name:'',
-    type:'',
+    name:'Arcade',
+    type:'Monthly',
     Price:{
-      int:0,
-      symbole:'',
+      int:9,
+      symbole:'mo',
     }
   }
 },
 {
-  AddOns:[]
+  AddOns:[],
+  AddonsPrices:[],
 }];
+
+export const updateData =(data)=>{
+  localStorage.setItem('savedData2', data);
+}

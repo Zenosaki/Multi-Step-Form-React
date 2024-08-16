@@ -5,22 +5,29 @@ import pro from '../../assets/images/icon-pro.svg';
 import advanced from '../../assets/images/icon-advanced.svg';
 import arcade from '../../assets/images/icon-arcade.svg';
 import { S2Data } from '../../Data/Data';
-import { setDtype } from '../../Data/Data';
+import { setDtype, SavedData, updateData } from '../../Data/Data';
 
 export default function Step2() {
   const savedType = localStorage.getItem('selectedPlanType') || 'Monthly';
-
   const [Type, setType] = useState(savedType);
-  
   const [activeCard, setActiveCard] = useState(localStorage.getItem('activeCard') || '');
+
 
   useEffect(() => {
     localStorage.setItem('selectedPlanType', Type);
     setDtype(Type);
-  }, [Type]);
+    
+    if (activeCard) {
+      SavedData[0].Plan.type = Type;
+      SavedData[0].Plan.name = activeCard;
+      SavedData[0].Plan.Price.symbole = S2Data[0][activeCard].price[Type].symbole;
+      SavedData[0].Plan.Price.int = S2Data[0][activeCard].price[Type].int;
+      updateData(SavedData[0].Plan);
+    }
+  }, [Type, activeCard]);
 
   const triggertype = () => {
-    setType(prevType => (prevType === 'Monthly' ? 'Yearly' : 'Monthly'));
+    setType((prevType) => (prevType === 'Monthly' ? 'Yearly' : 'Monthly'));
   };
 
   const handleCardClick = (cardTitle) => {
@@ -30,12 +37,12 @@ export default function Step2() {
 
   return (
     <div className="Step-Content-Container">
-      <Title title='Select your plan' description='You have the option of monthly or yearly billing.' />
+      <Title title="Select your plan" description="You have the option of monthly or yearly billing." />
       <div className="content">
         <div className="Cards-Container">
           <Card
             icon={arcade}
-            title='Arcade'
+            title="Arcade"
             price={S2Data[0].Arcade.price[Type].int}
             symbole={S2Data[0].Arcade.price[Type].symbole}
             type={Type}
@@ -45,7 +52,7 @@ export default function Step2() {
           />
           <Card
             icon={advanced}
-            title='Advanced'
+            title="Advanced"
             price={S2Data[0].Advanced.price[Type].int}
             symbole={S2Data[0].Advanced.price[Type].symbole}
             type={Type}
@@ -55,7 +62,7 @@ export default function Step2() {
           />
           <Card
             icon={pro}
-            title='Pro'
+            title="Pro"
             price={S2Data[0].Pro.price[Type].int}
             symbole={S2Data[0].Pro.price[Type].symbole}
             type={Type}

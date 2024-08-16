@@ -23,6 +23,6 @@ Checkbox.propTypes = {
   specs: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   symbol: PropTypes.string.isRequired,
-  isActive: PropTypes.bool.isRequired,
+  isActive: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
 };
