@@ -3,9 +3,9 @@ import Title from '../StepContentTitle';
 import Checkbox from '../MiniComponents/Step3-Checkbox';
 import { Dtype } from '../../Data/Data';
 import { S3Data } from '../../Data/Data';
+import {SavedData} from '../../Data/Data'
 
 export default function Step3() {
-  // Initialize state from localStorage or default to empty object
   const [selectedAddOns, setSelectedAddOns] = useState(
     JSON.parse(localStorage.getItem('selectedAddOns')) || {}
   );
@@ -14,20 +14,33 @@ export default function Step3() {
   const handleCheckboxClick = (service) => {
     setSelectedAddOns((prevSelectedAddOns) => {
       const updatedAddOns = { ...prevSelectedAddOns };
+  
+    
       if (updatedAddOns[service]) {
         delete updatedAddOns[service];
+  
+       
+        SavedData[1].AddOns = SavedData[1].AddOns.filter(item => item !== service);
       } else {
+
         updatedAddOns[service] = true;
+  
+
+        if (!SavedData[1].AddOns.includes(service)) {
+          SavedData[1].AddOns.push(service);
+        }
       }
+      
       return updatedAddOns;
     });
   };
+  
 
   // Save selected add-ons to localStorage
   useEffect(() => {
     localStorage.setItem('selectedAddOns', JSON.stringify(selectedAddOns));
   }, [selectedAddOns]);
-
+  console.log(SavedData[1].AddOns)
   return (
     <div className="Step-Content-Container">
       <Title title='Pick add-ons' description='Add-ons help enhance your gaming experience.' />
