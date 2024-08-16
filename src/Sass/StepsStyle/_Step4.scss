@@ -1,1 +1,59 @@
 //SapceBetween
+
+.Step4{
+  margin-top: 20px;
+  padding: 25px;
+  .Plan{
+    @include SapceBetween();
+    div{
+      h4{
+        color:$Marineblue;
+        font-weight: 500;
+      }
+      button{
+        cursor: pointer;
+        border: none;
+        background: none;
+        text-decoration: underline;
+        color:$Purplishblue;
+        font-size: medium;
+        padding-top: 5px;
+      }
+    }
+    h4{
+      color:$Marineblue;
+      font-weight: 700;
+    }
+  }
+  hr {
+    border: none;
+    height: 1px;
+    background-color: $Lightgray;
+  }
+  .Addons{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+   .Addon{
+    @include SapceBetween();
+    h5{
+      color:$Coolgray;
+      font-weight: 400;
+    }
+    .AddonPrice{
+      color:$Marineblue;
+    }
+   } 
+  }
+  .total{
+    margin-top: 35px;
+    @include SapceBetween();
+    h5{
+      color:$Coolgray;
+    }
+    h3{
+      color:$Purplishblue;
+      font-weight: 700;
+    }
+  }
+}

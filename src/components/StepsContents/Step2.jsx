@@ -22,6 +22,7 @@ export default function Step2() {
       SavedData[0].Plan.name = activeCard;
       SavedData[0].Plan.Price.symbole = S2Data[0][activeCard].price[Type].symbole;
       SavedData[0].Plan.Price.int = S2Data[0][activeCard].price[Type].int;
+      localStorage.setItem('SavedData', JSON.stringify(SavedData));
     }
   }, [Type, activeCard]);
 

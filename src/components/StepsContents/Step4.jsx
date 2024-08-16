@@ -1,5 +1,4 @@
 import Title from '../StepContentTitle';
-import { SavedData } from '../../Data/Data';
 
 export default function Step4() {
   const Data=JSON.parse(localStorage.getItem('SavedData'))
@@ -12,7 +11,7 @@ export default function Step4() {
   return (
     <div className="Step-Content-Container">
       <Title title="Finishing up" description="Double-check everything looks OK before confirming." />
-      <div className="content">
+      <div className="content Step4">
         <div className="Plan">
           <div>
             <h4>{Data[0].Plan.name} ({Data[0].Plan.type})</h4>
@@ -27,7 +26,7 @@ export default function Step4() {
           {Data[1].AddOns.map((element, index) => (
             <div key={index} className="Addon">
               <h5>{element}</h5>
-              <h5>+${Data[1].AddonsPrices[index]}/{Data[0].Plan.Price.symbole}</h5>
+              <h5 className='AddonPrice'>+${Data[1].AddonsPrices[index]}/{Data[0].Plan.Price.symbole}</h5>
             </div>
           ))}
         </div>
