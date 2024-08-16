@@ -93,7 +93,3 @@ export const SavedData=[{
   AddOns:[],
   AddonsPrices:[],
 }];
-
-export const updateData =(data)=>{
-  localStorage.setItem('savedData2', data);
-}

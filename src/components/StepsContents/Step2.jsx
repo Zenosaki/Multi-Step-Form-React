@@ -5,7 +5,7 @@ import pro from '../../assets/images/icon-pro.svg';
 import advanced from '../../assets/images/icon-advanced.svg';
 import arcade from '../../assets/images/icon-arcade.svg';
 import { S2Data } from '../../Data/Data';
-import { setDtype, SavedData, updateData } from '../../Data/Data';
+import { setDtype, SavedData} from '../../Data/Data';
 
 export default function Step2() {
   const savedType = localStorage.getItem('selectedPlanType') || 'Monthly';
@@ -22,7 +22,6 @@ export default function Step2() {
       SavedData[0].Plan.name = activeCard;
       SavedData[0].Plan.Price.symbole = S2Data[0][activeCard].price[Type].symbole;
       SavedData[0].Plan.Price.int = S2Data[0][activeCard].price[Type].int;
-      updateData(SavedData[0].Plan);
     }
   }, [Type, activeCard]);
 

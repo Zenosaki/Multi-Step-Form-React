@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Title from '../StepContentTitle';
 import Checkbox from '../MiniComponents/Step3-Checkbox';
-import { Dtype, S3Data, SavedData, updateData } from '../../Data/Data';
+import { Dtype, S3Data, SavedData } from '../../Data/Data';
 
 export default function Step3() {
   const [selectedAddOns, setSelectedAddOns] = useState(
@@ -9,39 +9,44 @@ export default function Step3() {
   );
 
   
-  const handleCheckboxClick = (service) => {
+  const handleCheckboxClick = (service, price) => {
     setSelectedAddOns((prevSelectedAddOns) => {
       const updatedAddOns = { ...prevSelectedAddOns };
+      const addOnsIndex = SavedData[1].AddOns.indexOf(service);
 
       if (updatedAddOns[service]) {
+        
         delete updatedAddOns[service];
-        const index = SavedData[1].AddOns.indexOf(service);
-        if (index > -1) {
-          SavedData[1].AddOns.splice(index, 1);
-          SavedData[1].AddonsPrices.splice(index, 1);
+        
+        if (addOnsIndex > -1) {
+          SavedData[1].AddOns.splice(addOnsIndex, 1); // 
+          SavedData[1].AddonsPrices.splice(addOnsIndex, 1);
         }
       } else {
+        
         updatedAddOns[service] = true;
 
-        if (!SavedData[1].AddOns.includes(service)) {
+        if (addOnsIndex === -1) {
           SavedData[1].AddOns.push(service);
-          SavedData[1].AddonsPrices.push(S3Data[0][service.replace(" ", "")][Dtype].int);
+          SavedData[1].AddonsPrices.push(price);
         }
       }
 
-      updateData(SavedData[1].AddOns);
-      console.log(SavedData);
+   
+      localStorage.setItem('SavedData', JSON.stringify(SavedData));
+
       return updatedAddOns;
     });
   };
 
+  // Save selected add-ons to localStorage
   useEffect(() => {
     localStorage.setItem('selectedAddOns', JSON.stringify(selectedAddOns));
   }, [selectedAddOns]);
 
   return (
     <div className="Step-Content-Container">
-      <Title title="Pick add-ons" description="Add-ons help enhance your gaming experience." />
+      <Title title='Pick add-ons' description='Add-ons help enhance your gaming experience.' />
       <div className="content">
         <Checkbox
           service="Online service"
@@ -49,7 +54,7 @@ export default function Step3() {
           price={S3Data[0].Onlineservice[Dtype].int}
           symbol={S3Data[0].Onlineservice[Dtype].symbole}
           isActive={selectedAddOns['Online service']}
-          onClick={() => handleCheckboxClick('Online service')}
+          onClick={() => handleCheckboxClick('Online service', S3Data[0].Onlineservice[Dtype].int)}
         />
         <Checkbox
           service="Larger storage"
@@ -57,7 +62,7 @@ export default function Step3() {
           price={S3Data[0].Largerstorage[Dtype].int}
           symbol={S3Data[0].Largerstorage[Dtype].symbole}
           isActive={selectedAddOns['Larger storage']}
-          onClick={() => handleCheckboxClick('Larger storage')}
+          onClick={() => handleCheckboxClick('Larger storage', S3Data[0].Largerstorage[Dtype].int)}
         />
         <Checkbox
           service="Customizable profile"
@@ -65,7 +70,7 @@ export default function Step3() {
           price={S3Data[0].Customizableprofile[Dtype].int}
           symbol={S3Data[0].Customizableprofile[Dtype].symbole}
           isActive={selectedAddOns['Customizable profile']}
-          onClick={() => handleCheckboxClick('Customizable profile')}
+          onClick={() => handleCheckboxClick('Customizable profile', S3Data[0].Customizableprofile[Dtype].int)}
         />
       </div>
     </div>
