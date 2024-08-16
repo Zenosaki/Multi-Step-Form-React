@@ -12,7 +12,6 @@ export default function Step4() {
     <div className="Step-Content-Container">
       <Title title="Finishing up" description="Double-check everything looks OK before confirming." />
       <div className="content">
-        {/* Plan Section */}
         <div className="Plan">
           <div>
             <h4>{SavedData[0].Plan.name} ({SavedData[0].Plan.type})</h4>
