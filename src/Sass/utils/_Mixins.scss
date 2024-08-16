@@ -3,3 +3,9 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin SapceBetween(){
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
