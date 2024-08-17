@@ -5,12 +5,11 @@ import './Sass/Main.scss'
 export default function App() {
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<MainPage/>}/>
-        <Route path='/' element={<MainPage/>}/>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter basename="/Multi-Step-Form-React">
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+        </Routes>
+      </BrowserRouter>
   </>
   )
 }
