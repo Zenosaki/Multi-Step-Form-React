@@ -4,15 +4,15 @@
   "version": "0.0.0",
   "homepage": "https://Zenosaki.github.io/Multi-Step-Form-React",
   "type": "module",
-"scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
-  "postbuild": "npx replace-in-file '<!DOCTYPE HTML>' '<!doctype html>' dist/index.html",
-  "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-  "preview": "vite preview"
-},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "postbuild": "npx replace-in-file '<!DOCTYPE HTML>' '<!doctype html>' dist/index.html",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
@@ -30,6 +30,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "gh-pages": "^6.1.1",
+    "replace-in-file": "^8.1.0",
     "sass": "^1.77.6",
     "vite": "^5.3.1"
   }
