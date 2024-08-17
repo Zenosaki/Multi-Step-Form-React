@@ -9,6 +9,7 @@
   "build": "vite build",
   "predeploy": "npm run build",
   "deploy": "gh-pages -d dist",
+  "postbuild": "npx replace-in-file '<!DOCTYPE HTML>' '<!doctype html>' dist/index.html",
   "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
   "preview": "vite preview"
 },
