@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export default function Input(props) {
   return (
@@ -16,7 +16,6 @@ export default function Input(props) {
     </div>
   );
 }
-
 
 Input.propTypes = {
   placeholder: PropTypes.string.isRequired,
